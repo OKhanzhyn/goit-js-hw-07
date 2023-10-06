@@ -11,20 +11,19 @@ const typset = galleryItems.map(({ preview, original, description }) => {
             <img
                 loading="lazy"
                 class="gallery__image"
-                src="${preview}"
-                
-                alt="${description}"
+                src="${preview}"               
+                title = "${description}"
             />
         </a>
     </li>`;
 }).join('');
 
   gallaryList.innerHTML = typset;
-  new SimpleLightbox('.gallery a', {
+  const lightbox = new SimpleLightbox('.gallery a', {
   caption: true,
   captionDelay: 250,
   fadeSpeed: 250,
   captionSelector: "img",
-  captionData: "description",
+  captionData: "title",
   captionPosition: "bottom",}); 
 

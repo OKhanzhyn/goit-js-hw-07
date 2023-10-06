@@ -38,6 +38,7 @@ const typset = galleryItems.map(({ preview, original, description }) => {
         </a>
     </li>`;
 }).join('');
+
 gallaryList.insertAdjacentHTML("beforeend", typset);
 const modalOpen = (event) => {
     event.preventDefault();
@@ -58,14 +59,35 @@ const modalOpen = (event) => {
         });
     instance.show();
 };
+
+// onclick ="jQuery.instance.close()";
 const modalClose = (event) => {
-    if (event.key !== 'Escape') {
-        return;
-    }
-    instance.close();
-};
+    // if (event.key !== "Escape") {
+    //     return;
+    // };
+  
+    // instance.close();
+    // onclick ="jQuery.instance.close()";
+   };
+
+
+
 document.addEventListener('keydown', modalClose);
 gallaryList.addEventListener('click', (event) => {
     modalOpen(event);
 });
 
+
+// function onImageClick(event) {
+//     event.preventDefault();
+//     const target = event.target;
+//     if (target.classList.contains('gallery__image')) {
+//         const originalImageUrl = target.dataset.source;
+//         modal = basicLightbox.create(`
+//         <img src="${originalImageUrl}" width="800" height="600">
+//         `);
+//         modal.show();
+//         modalIsOpen = true;
+//     }
+//     document.addEventListener('keydown', keyDown);
+// }
